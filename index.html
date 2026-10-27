@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple full-stack note-taking application." />
+  <title>Quick Notes | Stay Organized</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Quick Notes home">
+        <span class="brand-icon">✦</span>
+        <span>quick<span class="brand-accent">notes</span></span>
+      </a>
+      <span class="topbar-note">A little space for your thoughts</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR PERSONAL SPACE</div>
+        <h1>Ideas worth <span>keeping.</span></h1>
+        <p>Capture a thought, make a plan, or save a little reminder. Keep everything in one place.</p>
+      </section>
+
+      <section class="workspace">
+        <form id="note-form" class="composer">
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">CREATE A NOTE</p>
+              <h2>What's on your mind?</h2>
+            </div>
+            <span class="sparkle" aria-hidden="true">✧</span>
+          </div>
+          <label for="note-title">Title</label>
+          <input id="note-title" name="title" type="text" maxlength="100" placeholder="e.g. Things to remember" required />
+          <label for="note-content">Your note</label>
+          <textarea id="note-content" name="content" rows="4" maxlength="2000" placeholder="Write your thoughts here..." required></textarea>
+          <div class="form-footer">
+            <span class="hint">Keep it short, keep it useful.</span>
+            <button class="primary-button" type="submit"><span>＋</span> Add note</button>
+          </div>
+          <p id="form-message" class="message" role="status" aria-live="polite"></p>
+        </form>
+
+        <section class="notes-section" aria-labelledby="notes-heading">
+          <div class="notes-header">
+            <div>
+              <p class="section-kicker">YOUR COLLECTION</p>
+              <h2 id="notes-heading">Your notes <span id="note-count" class="count">0</span></h2>
+            </div>
+            <button id="refresh-button" class="quiet-button" type="button" title="Refresh notes">↻ Refresh</button>
+          </div>
+          <div id="notes-list" class="notes-grid" aria-live="polite">
+            <div class="loading-card">Loading your notes…</div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <span>Made with care ✦</span>
+      <span>Quick Notes · Full-stack CRUD project</span>
+    </footer>
+  </div>
+</body>
+</html>
